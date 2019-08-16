@@ -3,13 +3,28 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import 'common/js/base'
-import 'common/css/reset.css'
+
+
+
+import 'assets/css/index.styl'
+import 'assets/js/base'
+import 'assets/css/font.styl'
 Vue.config.productionTip = false
 
+//引入 MintUI
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use( MintUI)
 
-// import vuePicturePreview from 'vue-picture-preview'
-// Vue.use(vuePicturePreview)
+// 自定义事件
+
+Vue.directive('focus', {
+  // 当绑定元素插入到 DOM 中。
+  inserted: function (el) {
+    // 聚焦元素
+    el.focus()
+  },
+})  
 
 
 /* eslint-disable no-new */

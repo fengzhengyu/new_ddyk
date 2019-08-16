@@ -1,13 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from 'page/Index';   //主页
-import Intro from 'page/Intro';  //公司介绍
-import Project from 'page/Project';  //项目介绍
-import  News from 'page/News'; //新闻动态
-import Detail from 'page/NewsDetail';//新闻详情
-import Garden from 'page/Garden'; //园区展示
-import Shop from 'page/Shop'; //门店展示
-import Contact from 'page/Contact'; // 联系方式
+import Category from 'page/Category';   //分类页
+import ProductDetail from 'page/ProductDetail';   //产品详情页
+import Search from 'page/Search';   //产品详情页
+import SearchResult from 'page/SearchResult';   //产品详情页
+
 
 Vue.use(Router)
 
@@ -16,47 +14,28 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: Home
+      component: Home,
+     
     },
     {
-      path: '/intro',
-      name: 'intro',
-      component: Intro
+      path: '/category',
+      name: 'category',
+      component: Category
     },
     {
-      path: '/project',
-      name: 'project',
-      component: Project
+      path: '/product',
+      name: 'product',
+      component: ProductDetail
     },
     {
-      path: '/news',
-      name: 'news',
-      component: News,
-      meta: {
-      
-        keepAlive: true ,
-        isUseCache: false
-      }
+      path: '/search',
+      name: 'search',
+      component: Search
     },
     {
-      path: '/detail',
-      name: 'detail',
-      component:Detail
-    },
-    {
-      path: '/garden',
-      name: 'garden',
-      component: Garden
-    },
-    {
-      path: '/shop',
-      name: 'shop',
-      component:Shop
-    },
-    {
-      path: '/contact',
-      name: 'contact',
-      component:Contact
+      path: '/search/:name',
+      name: 'searchName',
+      component: SearchResult
     }
   ],
   scrollBehavior (to, from, savedPosition) {
