@@ -2,9 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from 'page/Index';   //主页
 import Category from 'page/Category';   //分类页
+import Member from 'page/Member';   //会员页
 import ProductDetail from 'page/ProductDetail';   //产品详情页
-import Search from 'page/Search';   //产品详情页
-import SearchResult from 'page/SearchResult';   //产品详情页
+import Search from 'page/Search';   //搜索
+import SearchResult from 'page/SearchResult';   //搜搜列表
+import Company from 'page/Company';   //厂家列表
+
 
 
 Vue.use(Router)
@@ -22,10 +25,18 @@ export default new Router({
       name: 'category',
       component: Category
     },
+    
     {
       path: '/product',
       name: 'product',
       component: ProductDetail
+    },
+
+    // company
+    {
+      path: '/company',
+      name: 'company',
+      component: Company
     },
     {
       path: '/search',
@@ -36,7 +47,13 @@ export default new Router({
       path: '/search/:name',
       name: 'searchName',
       component: SearchResult
-    }
+    },
+    // Member
+    {
+      path: '/member',
+      name: 'member',
+      component: Member
+    },
   ],
   scrollBehavior (to, from, savedPosition) {
 

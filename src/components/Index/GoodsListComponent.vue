@@ -18,7 +18,7 @@
          </div>
        </div>
       </li>-->
-      <li class="list-item" v-for="item in goodsList" @click="goDetail(item)">
+      <li class="list-item" v-for="(item,index) in goodsList" @click="goDetail(item)" :key="index">
         <div class="img"></div>
         <div class="info">
           <h3 class="index-goods-title">小儿清热止咳颗粒</h3>

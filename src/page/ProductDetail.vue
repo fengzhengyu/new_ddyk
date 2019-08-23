@@ -34,26 +34,43 @@
                     <span class="name">生产企业：</span>
                     <span class="text">黑龙江省济仁药业有限公司黑龙江省济仁药业有限公司</span>
                 </p>
+                <p class="detail-text">
+                    <span class="name">店铺：</span>
+                    <span class="text">某某某店铺</span>
+                </p>
+                <p class="detail-text">
+                    <span class="name">营业执照：</span>
+                    <span class="text line" @click="show('https://gcpt.hnxjksm.com/hnxjkSvn/Uploads/Supplier/1566025516443.jpg')">查看</span>
+                </p>
+                <p class="detail-text">
+                    <span class="name">经营资质：</span>
+                    <span class="text line" @click="show('https://gcpt.hnxjksm.com/hnxjkSvn/Uploads/Supplier/1566383715880.jpg')">查看</span>
+                </p>
+
             
                 <div class="desc" ></div>
             </div>
         </div>
         <div class="footer">
-            <div class="item" @click="go('index')">
+            <div class="item" @click="$router.push({name:'company'})">
                 <i slot="icon" class="iconfont icon-zhuye footer-icon"></i>
                 <span class="footer-text ">厂家</span>
             </div>
-            <div class="item"   @click="go('category')">
+            <div class="item"   @click="goCollect">
                 <i slot="icon" class="iconfont icon-shoucang footer-icon"></i>
                 <span class="footer-text "> 收藏</span>
             </div>
         
-            <div class="item talk" @click="go('member')">
+            <div class="item talk" @click="goTalk">
                 <i slot="icon" class="iconfont icon-wodedangxuan1 footer-icon"></i>
                 <span class="footer-text ">我要洽谈</span>
             </div>
         </div>
-        
+        <div class="imagePopup" v-if="isShow" @click="isShow =!isShow">
+            <img :src="showImage" alt="">
+           
+            
+        </div>
     </div>
     
 </template>
@@ -64,6 +81,8 @@
         data() {
             return {
                 goods: {},
+                showImage: '',
+                isShow:false
              
             }
         },
@@ -81,29 +100,39 @@
               })      
         },
         methods: {
-      
+            
       
             //去收藏
             async goCollect(){
-                if(!this.userCode){
-                    this.$toast({
-                        message: '请登录',
-                        position: 'middle',
-                        duration: 2000
-                    });
-                    setTimeout(()=>{
-                        this.$router.push({
-                            name: 'login'
-                        });
-                    },500)
-                    return;
-                 }
-                let {data:res} = await getCollectData({goodsId: this.$route.params.goodsId,userCode: this.userCode});
-                this.$toast({
-                    message: res.info,
-                    position:'middle',
-                    duration: 2000
-                });
+                // if(!this.userCode){
+                //     this.$toast({
+                //         message: '请登录',
+                //         position: 'middle',
+                //         duration: 2000
+                //     });
+                //     setTimeout(()=>{
+                //         this.$router.push({
+                //             name: 'login'
+                //         });
+                //     },500)
+                //     return;
+                //  }
+                // let {data:res} = await getCollectData({goodsId: this.$route.params.goodsId,userCode: this.userCode});
+                // this.$toast({
+                //     message: res.info,
+                //     position:'middle',
+                //     duration: 2000
+                // });
+            },
+            // 洽谈
+            goTalk(){
+
+            },
+            show(url){
+                this.isShow = true;
+                
+                this.showImage = url;
+               
             }
         },
       
@@ -180,6 +209,9 @@
                 flex 1    
                 width 100%
                 no-wrap()
+                &.line
+                    text-decoration underline
+                    color #fd4926
         .desc 
             width 100%
             img 
@@ -222,5 +254,20 @@
             color #fff
             .footer-icon
                 color #fff
-
+.imagePopup
+    position fixed
+    top 0
+    left 0
+    right 0
+    bottom  0
+    background rgba(0,0,0,0.9)
+    z-index 99999
+    img 
+        width px2rem(750)
+        height px2rem(750)
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%,-50%)
+        background #fff
 </style>

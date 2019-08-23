@@ -16,6 +16,11 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use( MintUI)
 
+// 图片查看插件
+import Viewer from 'v-viewer'
+import 'viewerjs/dist/viewer.css'
+Vue.use(Viewer)
+
 // 自定义事件
 
 Vue.directive('focus', {

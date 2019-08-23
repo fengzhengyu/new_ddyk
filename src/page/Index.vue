@@ -65,19 +65,19 @@ export default {
         setTimeout(() => {
 
          
-        let last = this.goodsList[this.goodsList.length - 1];
-        if(last>=50){
-          this.loading = false;
-          this.end = true;
-          return;
-        }
-        for (let i = 1; i <= 10; i++) {
-         
-          this.goodsList.push(last + i);
+          let last = this.goodsList[this.goodsList.length - 1];
+          if(last>=50){
+            this.loading = true;
+            this.end = true;
+            return;
+          }
+          for (let i = 1; i <= 10; i++) {
+          
+            this.goodsList.push(last + i);
 
-        }
-         
-        this.loading = false;
+          }
+          
+          this.loading = false;
       }, 300);
     },
     loadTop(){
