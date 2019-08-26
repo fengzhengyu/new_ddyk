@@ -67,6 +67,10 @@ export default {
     },
     goTalk(item){
       console.log(item)
+      this.$toast({
+      message: '操作成功',
+      // iconClass: 'icon icon-success'
+    });
     }
   }
 };
@@ -105,6 +109,7 @@ export default {
           padding: px2rem(20) 0
           // font-weight 700
           color: #000
+          font-size 16px
           no-wrap()
         
 
@@ -112,6 +117,7 @@ export default {
           color: #939393
           padding-bottom: px2rem(20)
           // font-weight 700
+          font-size 14px
         
 
         .btn-wap 
@@ -128,6 +134,7 @@ export default {
             background: #fd4926
             cursor: pointer
             border-radius: px2rem(3)
+            font-size 12px
     .load-wrap
       width  100%
 
@@ -146,7 +153,7 @@ export default {
     line-height: px2rem(400)
     text-align: center
     color: #000000
-    font-size: px2rem(24)
+    font-size: 18px
   
 
 </style>

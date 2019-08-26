@@ -196,6 +196,7 @@
             width px2rem(690)
             padding px2rem(45) 0
             color #474747
+            font-size 24px
           
             no-wrap()    
         p 
@@ -203,6 +204,7 @@
             width px2rem(690)
             padding-bottom px2rem(45)
             color #939393
+            font-size 16px
             .name
                 flex  0 0 px2rem(190)
             .text
@@ -244,11 +246,13 @@
             color #c4c4c4
             position relative
             display block
+            font-size 22px
         
         .footer-text 
             display block
             // font-weight 700
             padding-top px2rem(5)
+            font-size 12px
         &.talk
             background #1db833
             color #fff

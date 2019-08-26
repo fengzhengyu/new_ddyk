@@ -7,6 +7,7 @@ import ProductDetail from 'page/ProductDetail';   //产品详情页
 import Search from 'page/Search';   //搜索
 import SearchResult from 'page/SearchResult';   //搜搜列表
 import Company from 'page/Company';   //厂家列表
+import Login from 'page/Login';   //厂家列表
 
 
 
@@ -54,6 +55,11 @@ export default new Router({
       name: 'member',
       component: Member
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    }
   ],
   scrollBehavior (to, from, savedPosition) {
 

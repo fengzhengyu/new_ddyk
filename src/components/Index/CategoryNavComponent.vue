@@ -65,6 +65,7 @@ export default {
         width 100%
         margin-top px2rem(15)  
         display block
+        font-size 12px
         // font-weight 500
       
 </style>

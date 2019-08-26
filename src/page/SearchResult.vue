@@ -107,7 +107,8 @@ export default {
         left 0
         right 0
         bottom 0
-        background #fff
+        background #f2f2f2
+    
     
         .header  
             width px2rem(750)
@@ -129,12 +130,15 @@ export default {
                 overflow hidden
                 position relative
                 .icon    
-                        color #999
-                       
-                        display block
-                        position absolute
-                        top 50%
-                        left px2rem(15)
+                    color #999
+                    
+                    display block
+                    position absolute
+                    top 50%
+                    left px2rem(15)
+                    font-size 16px
+                    margin-top -8px
+
                         
                 input 
                     background #ededed
@@ -146,11 +150,12 @@ export default {
                     box-sizing border-box
                     outline none
                     line-height px2rem(60)
-                    // font-size .24rem
+                    font-size 12px
             .text
                 width px2rem(100)
                 color #999
                 text-align center
+                font-size 12px
       
         .search-list
             margin-top px2rem(102)

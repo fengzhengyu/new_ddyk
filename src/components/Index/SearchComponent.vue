@@ -40,6 +40,7 @@ export default {
           box-sizing border-box
           border-radius px2rem(20)
           padding-left  px2rem(50)
+          font-size 12px
         
           color #000
         .index-search-icon
@@ -48,4 +49,6 @@ export default {
           left px2rem(40) 
           color #717171
           cursor pointer
+          font-size 16px
+          margin-top: -8px;
 </style>

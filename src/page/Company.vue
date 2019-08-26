@@ -165,18 +165,21 @@ import goodsList from "@/components/Index/GoodsListComponent.vue";
         width 100%
         padding-bottom px2rem(45)
         color #474747   
+        font-size 16px
         .name
             flex  0 0 px2rem(190)
         .text
             flex 1    
             width 100%
+            
             no-wrap()
             &.line
                 text-decoration underline
                 color #fd4926    
             &.bold
                 color #474747   
-                font-weight 700  
+                font-weight 700 
+                font-size 18px 
 .company-title
     width px2rem(750)
     text-align center

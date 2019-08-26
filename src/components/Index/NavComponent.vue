@@ -32,12 +32,12 @@ export default {};
       flex 1
       text-align center
       padding-top px2rem(10)
-     
+      font-size 12px
    
       color #fff
       cursor pointer
       i 
-        // font-size px2rem(30)
-       
+        font-size 14px
+
         vertical-align middle
 </style>

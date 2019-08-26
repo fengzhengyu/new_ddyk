@@ -8,7 +8,7 @@ import router from './router'
 
 import 'assets/css/index.styl'
 import 'assets/js/base'
-import 'assets/css/font.styl'
+// import 'assets/css/font.styl'
 Vue.config.productionTip = false
 
 //引入 MintUI

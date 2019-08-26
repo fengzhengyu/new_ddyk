@@ -18,5 +18,8 @@ export default {
    color red
    text-align center
    line-height px2rem(300)
+   img 
+    width 100%
+    height 100%
 
 </style>

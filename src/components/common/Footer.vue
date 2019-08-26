@@ -53,8 +53,9 @@
         display flex
         justify-content center
         align-items center
-        // z-index 99999999
-        // left 0
+     
+        border-top 1px solid #eaeaea
+    
        
         .item
             flex 1
@@ -65,10 +66,11 @@
             .footer-icon
               color #bdbdbd
               position relative
+              font-size 22px
             
             .footer-text 
               display block
-              // font-weight 700
+              font-size 12px
               padding-top px2rem(5)
             &.active 
                 color #fd4c29

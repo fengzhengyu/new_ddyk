@@ -35,10 +35,9 @@ export default {
 </script>
 <style scoped lang="stylus">
   #app{
-    width px2rem(750)
-    margin  0 auto
+  
     background #f2f2f2
-    height auto
+   
   }
 </style>
 

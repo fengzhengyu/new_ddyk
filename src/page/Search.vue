@@ -14,7 +14,7 @@
             <div class="text search-search-text" @click="goSearch"  @keyup.enter = "goSearch">搜索</div>
         </div>
        
-        <div class="search-list">
+        <!-- <div class="search-list">
           <div class="wrap">
             <h2 class="search-search-title">历史记录</h2>
             <i class="iconfont icon-shanchu search-search-delete"></i>
@@ -24,7 +24,7 @@
             <i class="iconfont icon-guanbi-copy search-search-delete"></i>
           </div>
             
-        </div>
+        </div> -->
        
    
        
@@ -111,7 +111,7 @@ export default {
         left 0
         right 0
         bottom 0
-        background #fff
+        background #f2f2f2
     
         .header  
             width px2rem(750)
@@ -139,6 +139,8 @@ export default {
                         position absolute
                         top 50%
                         left px2rem(15)
+                        font-size 16
+                        margin-top -8px
                         
                 input 
                     background #ededed
@@ -150,11 +152,12 @@ export default {
                     box-sizing border-box
                     outline none
                     line-height px2rem(60)
-                    // font-size .24rem
+                    font-size 12px
             .text
                 width px2rem(100)
                 color #999
                 text-align center
+                font-size 12px
       
         .search-list
             margin-top px2rem(102)

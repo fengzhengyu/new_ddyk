@@ -1,6 +1,6 @@
 <template>
  
-    <div>    
+     
       <div class="search">
         <div class="img" @click="$router.go(-1)">
           <i class="iconfont icon-fanhui2"></i>
@@ -10,7 +10,7 @@
           <i class=" iconfont icon-sousuo category-search-icon" ></i>
         </div>
       </div>
-    </div>
+ 
  
 </template>
 
@@ -28,6 +28,8 @@ export default {
       background #fff
       display flex
       align-items: center;
+      height px2rem(120)
+      border-bottom  1px solid #eaeaea
     
       .img
         width px2rem(40)
@@ -37,6 +39,7 @@ export default {
         padding px2rem(40)
         i
           font-size px2rem(40)
+          color #919191
       .input
         flex 1
         padding 0 px2rem(30)  
@@ -49,14 +52,15 @@ export default {
           box-sizing border-box
           border-radius px2rem(20)
           padding-left  px2rem(55)
-       
+          font-size 12px
           color #000
           background #ededed
         .category-search-icon
           position absolute
           top 50%
           left px2rem(50) 
-         
+          font-size 16px
+          margin-top -8px
           color #717171
           cursor pointer
 </style>

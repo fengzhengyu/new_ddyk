@@ -1,6 +1,6 @@
 <template>
   <div class="category">
-   <v-header class="header" ref="header"></v-header>
+   <v-header class="header"></v-header>
    <div class="content">
      <div class="menu-wrap"  id="menu-wrap">
        <ul >
@@ -16,16 +16,16 @@
          <div>洽谈<i class="iconfont icon-xiaosanjiaodown"></i></div>
          <div>收藏<i class="iconfont icon-xiaosanjiaodown"></i></div>
        </div>
-       <div id="div-wrap" 
-          v-infinite-scroll="loadMore"
-          infinite-scroll-disabled="loading"
-          infinite-scroll-distance="10">
-        <mt-loadmore :top-method="loadTop" @top-status-change="handleTopChange" ref="loadmore" class="outer">
+       <mt-loadmore :top-method="loadTop" @top-status-change="handleTopChange" ref="loadmore">
           <div slot="top" class="mint-loadmore-top" >
             <span v-show="topStatus !== 'loading'" :class="{ 'rotate': topStatus === 'drop' }">↓下拉加载</span>
             <span v-show="topStatus === 'loading'">加载中...</span>
           </div>
-          <ul class="goods-box">
+          <ul class="goods-box"
+            v-infinite-scroll="loadMore"
+            infinite-scroll-disabled="loading"
+            infinite-scroll-distance="10"
+          >
             <li class="goods-item" @click="goDetail()" v-for="(item,index) in goodsList" :key="index">
               <div class="img"></div>
               <div class="info">
@@ -49,8 +49,6 @@
               </div>
           </div>
         </mt-loadmore>
-       </div>
-      
      </div>
    </div>
    <v-footer  class="footer"></v-footer>
@@ -79,18 +77,6 @@ export default {
   },
   created(){
       this.changeIndex = this.$route.query.id || 1;
-        
-  },
-  mounted(){
-     this.$nextTick(() => {
-      let height =
-        document.documentElement.clientHeight || document.body.clientHeight,
-        headerH = parseInt(document.documentElement.style.fontSize)*1.6 ;
-  
-        document.getElementById("menu-wrap").style.height=  height -(headerH*2) +'px';
-        document.getElementById("div-wrap").style.height=  height - (headerH*2)  +'px';
-    });
-
   },
   computed: {
    
@@ -158,7 +144,9 @@ export default {
     .header
       position static
     .content
-     
+      // position fixed
+      // top px2rem(120)
+      // bottom  px2rem(120)
       display flex
       width px2rem(750)
       background #fff
@@ -170,9 +158,8 @@ export default {
           .menu-item
             height px2rem(100)
             line-height px2rem(100)
-            border-right  1px solid #eaeaea
-            border-bottom  1px solid #eaeaea
-            font-size 12px
+            border-right  1px solid #ccc
+            border-bottom  1px solid #ccc
            
             // font-weight 700
             color #666666
@@ -180,7 +167,6 @@ export default {
               color #b2b2b2
               vertical-align middle
               padding 0 px2rem(15)
-              font-size 16px
             &.active  
               color #fd4926
               i 
@@ -191,16 +177,18 @@ export default {
       .goods-wrap
         flex 1
         margin-left px2rem(20)
-        position relative
+        overflow-y scroll
+        padding-top px2rem(80)
+       
         .nav-div
           padding  px2rem(30) px2rem(30) px2rem(10) 0
           display flex
           justify-content space-between
           box-sizing border-box
-          position absolute
+          position fixed
           background #ffffff
           width px2rem(530)
-          top  0
+          top  px2rem(120)
           z-index 999
           div 
             width px2rem(105)
@@ -209,84 +197,71 @@ export default {
             background #e7e7e7
             border-radius px2rem(20)
             text-align center
-            font-size 12px
-            padding-left px2rem(8)
-           
-
          
             i 
               
               color #666666
               vertical-align top
-              font-size 12px
-              
          
             &.active
               color #fd4926
               i 
                 color #fd4926
-        #div-wrap
-          overflow-y scroll
-          .outer
-            padding-top px2rem(80)
-          .goods-box
-            width 100%
-           
-            .goods-item
-              border-bottom 1px solid #eaeaea
-              padding px2rem(20)  px2rem(30) px2rem(20)   0
-              display flex
+        .goods-box
+          width 100%
+        
+          .goods-item
+            border-bottom 1px solid #ddd
+            padding px2rem(20)  px2rem(30) px2rem(20)   0
+            display flex
 
-              .img
-                width px2rem(225)
-                height px2rem(225)
-                background #999
-                margin-right px2rem(20)
+            .img
+              width px2rem(225)
+              height px2rem(225)
+              background #999
+              margin-right px2rem(20)
 
-                img 
-                  width 100%
-                  height 100%
-              .info
-                flex 1
-                width px2rem(245)
-                .category-goods-title 
-                  line-height normal
-                  width 100%
-                  // font-weight 700
-                  font-size 14px
-                  no-wrap()    
-                .category-goods-text
-                  width 100%
-                  no-wrap()   
-                  color #939393
-                  padding-top  px2rem(15)
-                  // font-weight 700
-                  font-size 12px
-                .btn-wrap
-                  display flex
-                  flex-flow row
-                  justify-content space-between
-                  padding-top px2rem(15)
-                  .category-goods-btn
-                    padding px2rem(6) px2rem(20)
-                    line-height:normal
-                    color #ffffff
-                    background #fd4926
-                    cursor pointer
-                    border-radius px2rem(3)
-                    font-size 12px
-          .load-wrap
-            width  100%
+              img 
+                width 100%
+                height 100%
+            .info
+              flex 1
+              width px2rem(245)
+              .category-goods-title 
+                line-height normal
+                width 100%
+                // font-weight 700
+                no-wrap()    
+              .category-goods-text
+                width 100%
+                no-wrap()   
+                color #939393
+                padding-top  px2rem(15)
+                // font-weight 700
+              .btn-wrap
+                display flex
+                flex-flow row
+                justify-content space-between
+                padding-top px2rem(15)
+                .category-goods-btn
+                  padding px2rem(6) px2rem(20)
+                  line-height:normal
+                  color #ffffff
+                  background #fd4926
+                  cursor pointer
+                  border-radius px2rem(3)
+        .load-wrap
+          width  100%
 
-            .loading
-              text-align center
-              line-height px2rem(70)
-              color #333
-              img
-                display inline-block
-                vertical-align middle
-                width px2rem(40)
-                height px2rem(40)
+          .loading
+            text-align center
+            line-height px2rem(70)
+            color #333
+            img
+              display inline-block
+              vertical-align middle
+              width px2rem(40)
+              height px2rem(40)
 
   
 
