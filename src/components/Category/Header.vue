@@ -3,7 +3,7 @@
      
       <div class="search">
         <div class="img" @click="$router.go(-1)">
-          <i class="iconfont icon-fanhui2"></i>
+          <i class="iconfont icon-shangyiye"></i>
         </div>
         <div class="input" @click="$router.push({name:'search'})">
           <input type="text" placeholder="请输入搜索关键词" class="category-search-text">

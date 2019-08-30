@@ -5,16 +5,16 @@
      <div class="menu-wrap"  id="menu-wrap">
        <ul >
           <li class="menu-item" :class="{'active':changeIndex == (index+1)}" v-for="(item,index) in category" :key="index" @click="tabCategory(index)">
-          <i class=" iconfont icon-search icon" ></i>{{item}}
+          <i class=" iconfont icon" :class="{'icon-zhongyao': index == 0,'icon-icon-zcyyy': index == 1,'icon-zhongyaoyinpian': index == 2,'icon-74133': index == 3,'icon-yiliaoqixie': index == 4,'icon-jiagongdanxinzeng': index == 5,'icon-baozhuang': index == 6,'icon-icon_yaozhuangmeirong': index == 7,'icon-muyingqinzi': index == 8,'icon--chengrenyongpin': index == 9}"></i>{{item}}
          </li>
        </ul>
      </div>
      <div class="goods-wrap">
        <div class="nav-div category-nav-text">
-         <div class="active">综合<i class="iconfont icon-xiaosanjiaodown"></i></div>
-         <div>热度<i class="iconfont icon-xiaosanjiaodown"></i></div>
-         <div>洽谈<i class="iconfont icon-xiaosanjiaodown"></i></div>
-         <div>收藏<i class="iconfont icon-xiaosanjiaodown"></i></div>
+         <div class="active">综合<i class="iconfont icon-sanjiaoxing-copy"></i></div>
+         <div>热度<i class="iconfont icon-sanjiaoxing-copy"></i></div>
+         <div>洽谈<i class="iconfont icon-sanjiaoxing-copy"></i></div>
+         <div>收藏<i class="iconfont icon-sanjiaoxing-copy"></i></div>
        </div>
        <div id="div-wrap" 
           v-infinite-scroll="loadMore"
@@ -79,6 +79,7 @@ export default {
   },
   created(){
       this.changeIndex = this.$route.query.id || 1;
+   
         
   },
   mounted(){
@@ -89,6 +90,9 @@ export default {
   
         document.getElementById("menu-wrap").style.height=  height -(headerH*2) +'px';
         document.getElementById("div-wrap").style.height=  height - (headerH*2)  +'px';
+
+
+        
     });
 
   },
@@ -97,6 +101,8 @@ export default {
   },
   methods: {
     goDetail(){
+        let scroll = document.getElementById("div-wrap").scrollTop;
+        console.log(scroll)
       this.$router.push({
         name:'product'
       })
@@ -178,7 +184,7 @@ export default {
             color #666666
             i 
               color #b2b2b2
-              vertical-align middle
+              // vertical-align middle
               padding 0 px2rem(15)
               font-size 16px
             &.active  

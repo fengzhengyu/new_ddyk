@@ -2,7 +2,7 @@
     <div class="search-page">
         <div class="header">
             <div class="search-back" @click="goBack">
-                <i class="iconfont icon-fanhui "></i>
+                <i class="iconfont icon-shangyiye"></i>
             </div>
             <div class="search-search">
                 <i class="iconfont icon-sousuo icon" @click="goSearch" @keyup.enter = "goSearch"></i>
@@ -123,6 +123,7 @@ export default {
             align-items center
             .search-back
                 padding  px2rem(30)
+                color #717171
                
             .search-search
                 background #fff
@@ -155,7 +156,7 @@ export default {
                     font-size 12px
             .text
                 width px2rem(100)
-                color #999
+                color #717171
                 text-align center
                 font-size 12px
       

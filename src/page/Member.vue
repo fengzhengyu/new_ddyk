@@ -3,6 +3,7 @@
     <header class="mine-header">
       <div class="user-photo">
           <!-- <img src="../assets/img/account.png" alt=""> -->
+        
           <img class="phone" src="../assets/images/account.png" >
       </div>
       <p class="member-user-name" v-if="!isLogin" @click="goLogin">点击登录</p>
@@ -16,29 +17,29 @@
         </span>
         <span class="menu-name member-menu-text">我的收藏</span>
         <span class="menu-go member-menu-icon">
-          <i class="iconfont icon-qianjin1"></i>
+          <i class="iconfont icon-qianjin"></i>
         </span>
       </div>
       <div class="mine-line"></div>
 
-      <div class="setting menu-list">
+      <!-- <div class="setting menu-list">
         <span class="menu-icon member-menu-icon1">
-          <i class="iconfont icon-huiyuantongjibaobiao"></i>
+          <i class="iconfont icon-integral"></i>
         </span>
         <span class="menu-name member-menu-text">我的积分</span>
         <span class="menu-go member-menu-icon">
-          <i class="iconfont icon-qianjin1"></i>
+          <i class="iconfont icon-qianjin"></i>
         </span>
       </div>
-      <div class="mine-line"></div>
+      <div class="mine-line"></div> -->
 
       <div class="setting menu-list">
         <span class="menu-icon member-menu-icon1">
-          <i class="iconfont icon-huiyuantongjibaobiao"></i>
+          <i class="iconfont icon-config--shixin"></i>
         </span>
         <span class="menu-name member-menu-text">账号管理</span>
         <span class="menu-go member-menu-icon">
-          <i class="iconfont icon-qianjin1"></i>
+          <i class="iconfont icon-qianjin"></i>
         </span>
       </div>
       <div class="mine-line"></div>
@@ -91,9 +92,14 @@ export default {
       margin px2rem(30) auto
       border-radius 50%
       overflow hidden
+      text-align center
+      // background #fff
       img
         width 100%
         height 100%
+      i 
+       font-size 16px
+      //  color #999
     .member-user-name
       padding px2rem(20)   
       text-align center

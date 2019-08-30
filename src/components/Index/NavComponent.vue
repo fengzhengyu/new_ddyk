@@ -2,19 +2,19 @@
   <div >
     <ul class="nav-wrap">
       <li class="nav-item">
-        <i class="iconfont icon-shanchu"></i>
+        <i class="iconfont icon-sangeren"></i>
         <span>药博会</span>
       </li>
       <li class="nav-item">
-       <i class="iconfont icon-shanchu"></i>
+       <i class="iconfont icon-zixun1"></i>
         <span>新闻资讯</span>
       </li>
       <li class="nav-item">
-        <i class="iconfont icon-shanchu"></i>
+        <i class="iconfont icon-zhuantituceng"></i>
         <span>专题活动</span>
       </li>
       <li class="nav-item">
-        <i class="iconfont icon-shoucang"></i>
+        <i class="iconfont icon-shipin"></i>
         <span>专题视频</span>
       </li>
     </ul>

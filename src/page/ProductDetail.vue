@@ -2,7 +2,7 @@
     <div>
         <div class="header">
             <div class="back"  @click="$router.go(-1)">
-                <i class="iconfont icon-fanhui2"></i>
+                <i class="iconfont icon-shangyiye"></i>
             </div>
             <div class="back-go"  @click="$router.push({path: '/'})"> <i class="iconfont icon-zhuye"></i> </div>
         </div>
@@ -53,7 +53,7 @@
         </div>
         <div class="footer">
             <div class="item" @click="$router.push({name:'company'})">
-                <i slot="icon" class="iconfont icon-zhuye footer-icon"></i>
+                <i slot="icon" class="iconfont icon-dianpu footer-icon"></i>
                 <span class="footer-text ">厂家</span>
             </div>
             <div class="item"   @click="goCollect">
@@ -62,7 +62,7 @@
             </div>
         
             <div class="item talk" @click="goTalk">
-                <i slot="icon" class="iconfont icon-wodedangxuan1 footer-icon"></i>
+                <i slot="icon" class="iconfont icon-bohao footer-icon"></i>
                 <span class="footer-text ">我要洽谈</span>
             </div>
         </div>

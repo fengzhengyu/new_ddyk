@@ -2,10 +2,10 @@
     <div>
         <div class="header">
             <div class="back"  @click="$router.go(-1)">
-                <i class="iconfont icon-fanhui2"></i>
+                <i class="iconfont icon-shangyiye"></i>
             </div>
           
-            <div class="back-go"  @click="$router.push({path: '/company'})"> <i class="iconfont icon-zhuye"></i> </div>
+            <div class="back-go"  @click="$router.push({path: '/'})"> <i class="iconfont icon-zhuye"></i> </div>
         </div>
         <div class="carousel" >
             <div class="img-wrap">

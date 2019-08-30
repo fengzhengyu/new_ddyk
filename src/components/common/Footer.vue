@@ -5,12 +5,12 @@
           <span class="footer-text ">首页</span>
       </div>
       <div class="item" :class="{'active':selected == 'category'}"  @click="go('category')">
-         <i slot="icon" class="iconfont icon-leimupinleifenleileibie2-copy footer-icon"></i>
+         <i slot="icon" class="iconfont icon-leimupinleifenleileibie footer-icon"></i>
          <span class="footer-text "> 分类</span>
       </div>
  
       <div class="item" :class="{'active':selected == 'member'}" @click="go('member')">
-          <i slot="icon" class="iconfont icon-wodedangxuan1 footer-icon"></i>
+          <i slot="icon" class="iconfont icon-yonghu1 footer-icon"></i>
           <span class="footer-text ">我的</span>
       </div>
   </footer>
