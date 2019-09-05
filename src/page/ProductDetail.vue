@@ -24,7 +24,7 @@
                 </p>
                 <p class="detail-text">
                     <span class="name">招商热度：</span>
-                    <span class="text">1233333</span>
+                    <span class="text"><HotComp  num="300" type="big"></HotComp></span>
                 </p>
                 <p class="detail-text">
                     <span class="name">洽谈次数：</span>
@@ -77,6 +77,7 @@
 <script>
 
     // import Swiper from 'components/common/Swiper'
+    import HotComp from '@/components/common/Hot'
     export default {
         data() {
             return {
@@ -104,25 +105,7 @@
       
             //去收藏
             async goCollect(){
-                // if(!this.userCode){
-                //     this.$toast({
-                //         message: '请登录',
-                //         position: 'middle',
-                //         duration: 2000
-                //     });
-                //     setTimeout(()=>{
-                //         this.$router.push({
-                //             name: 'login'
-                //         });
-                //     },500)
-                //     return;
-                //  }
-                // let {data:res} = await getCollectData({goodsId: this.$route.params.goodsId,userCode: this.userCode});
-                // this.$toast({
-                //     message: res.info,
-                //     position:'middle',
-                //     duration: 2000
-                // });
+           
             },
             // 洽谈
             goTalk(){
@@ -130,14 +113,15 @@
             },
             show(url){
                 this.isShow = true;
-                
                 this.showImage = url;
+                
+                
                
             }
         },
       
         components: {
-            // Swiper
+           HotComp
         },
         beforeRouteLeave (to, from, next) {  
             if (to.name == 'goods') {

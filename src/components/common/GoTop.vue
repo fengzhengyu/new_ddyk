@@ -3,7 +3,7 @@
         <div class="scroll" :class="{show:toTopShow}">
            
             <div id="toTop" @click="scrollToTop">
-                <i class="iconfont icon-arrow-up"></i>
+                ↑
             </div>
            
         </div>
@@ -90,13 +90,20 @@
             border-radius: 50%
 
         }
-        .scroll>div>i{
-            font-size: px2rem(30);
-        }
+     
         .scroll>div:hover{
             background-color: rgba(0,0,0,0.8);
         }
         .show{
             display: block;
         }
+       #toTop{
+        
+            position relative
+            font-size px2rem(24)
+        }
+       
+           
+           
+        
 </style>

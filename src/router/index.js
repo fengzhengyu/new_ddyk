@@ -7,8 +7,12 @@ import ProductDetail from 'page/ProductDetail';   //产品详情页
 import Search from 'page/Search';   //搜索
 import SearchResult from 'page/SearchResult';   //搜搜列表
 import Company from 'page/Company';   //厂家列表
-import Login from 'page/Login';   //厂家列表
-import Register from 'page/Register';   //厂家列表
+import Login from 'page/Login';   //登录
+import Register from 'page/Register';   //注册
+
+import Collect from 'components/Member/Collect';   //收藏
+import Setting from 'components/Member/Setting';   // 设置
+
 
 
 
@@ -65,7 +69,18 @@ export default new Router({
       path: '/register',
       name: 'register',
       component: Register
-    }
+    },
+    // collect
+    {
+      path: '/collect',
+      name: 'collect',
+      component: Collect
+    },
+    {
+      path: '/setting',
+      name: 'setting',
+      component: Setting
+    },
   ],
   scrollBehavior (to, from, savedPosition) {
 

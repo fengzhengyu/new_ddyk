@@ -48,6 +48,7 @@ import goodsList from "@/components/Index/GoodsListComponent.vue";
 import footer from "@/components/common/Footer.vue";
 import GoTop from '@/components/common/GoTop'
 
+
 export default {
   data() {
     return {
@@ -104,6 +105,7 @@ export default {
     goodsList,
     'v-footer': footer,
      GoTop,
+   
 
   }
 };

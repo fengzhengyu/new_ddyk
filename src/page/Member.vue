@@ -11,9 +11,9 @@
     </header>
     <section class="mine-main">
       
-      <div class="my-collect menu-list">
+      <div class="my-collect menu-list" @click="$router.push({name:'collect'})">
         <span class="menu-icon member-menu-icon1">
-          <i class="iconfont icon-shoucang"></i>
+          <i class="iconfont icon-shoucang" style="color:#f4c012;"></i>
         </span>
         <span class="menu-name member-menu-text">我的收藏</span>
         <span class="menu-go member-menu-icon">
@@ -33,9 +33,9 @@
       </div>
       <div class="mine-line"></div> -->
 
-      <div class="setting menu-list">
+      <div class="setting menu-list"  @click="$router.push({name:'setting'})">
         <span class="menu-icon member-menu-icon1">
-          <i class="iconfont icon-config--shixin"></i>
+          <i class="iconfont icon-config--shixin"  style="color:#cf925b;"></i>
         </span>
         <span class="menu-name member-menu-text">账号管理</span>
         <span class="menu-go member-menu-icon">

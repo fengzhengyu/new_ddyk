@@ -76,8 +76,8 @@ section
 
 
 body 
-  // font-family: -apple-system,sans-serif, "PingFang SC", "Helvetica Neue", "Helvetica", "STHeiTi"
-  font-family -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif
+  font-family: -apple-system,sans-serif, "PingFang SC", "Helvetica Neue", "Helvetica", "STHeiTi"
+  // font-family -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif
   line-height: 1
   // background #f2f2f2
   width px2rem(750)
@@ -113,3 +113,11 @@ ol
 
 
 
+.clearfix:before,
+.clearfix:after{
+  content: " ";
+  display: table;
+}
+.clearfix:after{
+  clear: both;
+}

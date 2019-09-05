@@ -31,7 +31,7 @@
               <div class="info">
                 <h3 class="category-goods-title">小儿清热止咳颗粒</h3>
                 <p class="category-goods-text">黑龙江省济仁药业有限公司123</p>
-                <p class="category-goods-text">招商热度：</p>
+                <p class="category-goods-text">招商热度：<HotComp  num="1500" type="small"></HotComp></p>
                 <p class="category-goods-text">洽谈次数：999</p>
                 <div class="btn-wrap">
                   <div class="category-goods-btn"  @click.stop="goTalk(item)">我要洽谈</div>{{item}}
@@ -61,6 +61,8 @@
 
 import header from '@/components/Category/Header.vue';
 import footer from '@/components/common/Footer.vue';
+import HotComp from '@/components/common/Hot'
+
 
 
 export default {
@@ -152,7 +154,7 @@ export default {
   },
   
   components: {
-
+    HotComp,
     'v-header':  header ,
     'v-footer':  footer 
   }

@@ -1,30 +1,16 @@
 <template>
   <div class="goods">
     <ul class="list-wrap" v-if="goodsList.length>0">
-      <!-- <li class="list-item">
-       <div class="img"></div>
-       <div class="info">
-         <h3 class="index-goods-title">小儿清热止咳颗粒</h3>
-         <p  class="index-goods-text">
-           <span>招商热度：</span>
-           <span class="heat-wrap">123</span>
-         </p>
-         <p  class="index-goods-text">
-            <span>洽谈次数：</span>
-            <span>999</span>
-         </p>
-         <div class="btn-wap">
-            <div class="btn index-goods-btn">我要洽谈</div>
-         </div>
-       </div>
-      </li>-->
-      <li class="list-item" v-for="(item,index) in goodsList" @click="goDetail(item)" :key="index">
+    
+      <li class="list-item" v-for="(item,index) in goodsList" @click="goDetail(item)" :key="index" >
         <div class="img"></div>
         <div class="info">
           <h3 class="index-goods-title">小儿清热止咳颗粒</h3>
           <p class="index-goods-text">
             <span>招商热度：</span>
-            <span class="heat-wrap">123</span>
+            <span class="heat-wrap">
+              <HotComp  num="1500" type="middle"></HotComp>
+            </span>
           </p>
           <p class="index-goods-text">
             <span>洽谈次数：</span>
@@ -52,6 +38,7 @@
 </template>
 
 <script>
+import HotComp from '../common/Hot'
 export default {
   props: ["goodsList","loading"],
   data(){
@@ -72,6 +59,9 @@ export default {
       // iconClass: 'icon icon-success'
     });
     }
+  },
+  components: {
+    HotComp
   }
 };
 </script>
